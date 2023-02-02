@@ -1,4 +1,4 @@
-type CounterProps = {
+export type CounterProps = {
 	title: string;
 	count: number;
 	goal?: number;

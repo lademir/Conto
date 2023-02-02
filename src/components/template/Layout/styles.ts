@@ -7,3 +7,21 @@ export const Container = styled.ScrollView`
 	padding-right: 10px;
 	color: ${({ theme }) => theme.COLORS.WHITE};
 `;
+
+export const Title = styled.Text`
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+
+	width: 80%;
+	margin-bottom: 10px;
+	color: ${({ theme }) => theme.COLORS.WHITE};
+`;
+
+export const RightButton = styled.TouchableOpacity`
+	width: 10%;
+`;
+
+export const LeftButton = styled.TouchableOpacity`
+	width: 10%;
+`;

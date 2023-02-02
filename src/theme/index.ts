@@ -5,5 +5,7 @@ export default {
 		DARK: "#220e24",
 		BACKGROUND: "#342056",
 		WHITE: "#ffffff",
+		ERROR: "#CC0000",
+		GRAY: "#D3D3D3",
 	},
 };

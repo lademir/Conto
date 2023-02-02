@@ -13,14 +13,20 @@ export const Container = styled.View`
 
 	padding: 10px;
 	margin-bottom: 5px;
-
-	justify-content: space-between;
 `;
 
 export const Title = styled.Text`
 	font-size: 18px;
 	font-weight: bold;
+	margin-right: auto;
 	color: ${({ theme }) => theme.COLORS.WHITE};
+`;
+
+export const CounterContainer = styled.View`
+	flex-direction: row;
+	align-items: center;
+	width: 60%;
+	justify-content: space-between;
 `;
 
 export const CounterButton = styled.TouchableOpacity``;
