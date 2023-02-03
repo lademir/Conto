@@ -10,6 +10,7 @@ interface CounterContextData {
     isLoadingData: boolean;
     incrementCounter: (id: number) => void;
     decrementCounter: (id: number) => void;
+    deleteCounter: (id: number) => void;
 }
 
 export const CounterContext = createContext({} as CounterContextData);
@@ -47,6 +48,12 @@ export function CounterProvider({ children }: { children: React.ReactNode; }) {
         }
     }
 
+    async function deleteCounter(id: number) {
+        const newCounters = counters.filter((counter) => counter.id !== id);
+        setCounters(newCounters);
+        CounterUpdate(newCounters);
+    }
+
     function incrementCounter(id: number) {
         const newCounters = counters.map((counter) => {
             if (counter.id === id) {
@@ -74,7 +81,8 @@ export function CounterProvider({ children }: { children: React.ReactNode; }) {
             addCounter,
             isLoadingData,
             incrementCounter,
-            decrementCounter
+            decrementCounter,
+            deleteCounter
         }}>
             {children}
         </CounterContext.Provider>

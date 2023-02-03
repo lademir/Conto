@@ -9,6 +9,9 @@ export const Container = styled.View`
 	border-radius: 6px;
 
 	flex-direction: row;
+	display: flex;
+
+	justify-content: space-between;
 	align-items: center;
 
 	padding: 10px;
@@ -18,15 +21,17 @@ export const Container = styled.View`
 export const Title = styled.Text`
 	font-size: 18px;
 	font-weight: bold;
-	margin-right: auto;
+	width: 25%;
+	/* margin-right: auto; */
 	color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const CounterContainer = styled.View`
 	flex-direction: row;
 	align-items: center;
-	width: 60%;
+	width: 50%;
 	justify-content: space-between;
+	/* margin-right: 30px; */
 `;
 
 export const CounterButton = styled.TouchableOpacity``;

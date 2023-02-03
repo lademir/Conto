@@ -29,7 +29,17 @@ export function AddCounter() {
                 color: theme.COLORS.WHITE,
                 duration: 1000 * 2 //2 seconds
             });
-        } else {
+        }
+        else if (form.title.length > 9) {
+            toast.show({
+                title: "No máximo 9 letras",
+                placement: "top",
+                backgroundColor: theme.COLORS.ERROR,
+                color: theme.COLORS.WHITE,
+                duration: 1000 * 2 //2 seconds
+            });
+        }
+        else {
             const data = {
                 title: form.title,
                 goal: form.goal ? Number(form.goal) : undefined,
