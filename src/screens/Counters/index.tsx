@@ -11,8 +11,8 @@ export default function Counters() {
 
     const navigation = useNavigation();
     const { counters } = useCounter();
-
     const HandlePushAddCounter = () => navigation.navigate("add");
+
 
 
     return (
@@ -23,9 +23,9 @@ export default function Counters() {
                     paddingTop: 8,
                 }}>
                     {
-                        counters ? (
+                        counters.length !== 0 ? (
                             counters.map((counter, index) => (
-                                <CounterCard key={index} title={counter.title} goal={counter.goal} initialValue={counter.count} />
+                                <CounterCard key={index} counter={counter} />
                             ))
                         ) : (
                             <NoData>

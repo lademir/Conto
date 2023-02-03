@@ -1,29 +1,31 @@
-import { useState } from "react";
+import { useCounter } from "../../data/hooks/useCounter";
+import { Counter as CounterModel } from "../../entities/Counter";
 import { Container, CounterButton, CounterContainer, CounterValue, MinusIcon, PlusIcon, Title } from "./styles";
 
 interface CounterProps {
-    title: string;
-    initialValue: number;
-    goal?: number;
+    counter: CounterModel;
 }
 
-export function Counter({ title, initialValue, goal }: CounterProps) {
-    const [value, setValue] = useState(initialValue);
+export function Counter({ counter }: CounterProps) {
 
-    const increment = () => setValue(value + 1);
+    const { incrementCounter, decrementCounter } = useCounter();
+
     const decrement = () => {
-        if (value > 0) {
-            setValue(value - 1);
-        }
+        decrementCounter(counter.id);
     };
+
+    const increment = () => {
+        incrementCounter(counter.id);
+    };
+
     return (
         <Container>
-            <Title>{title}</Title>
+            <Title>{counter.title}</Title>
             <CounterContainer>
-                <CounterButton disabled={value == 0} onPress={decrement}>
+                <CounterButton disabled={counter.count == 0} onPress={decrement}>
                     <MinusIcon />
                 </CounterButton>
-                <CounterValue>{value} {goal ? `/ ${goal}` : ""}</CounterValue>
+                <CounterValue>{counter.count} {counter.goal ? `/ ${counter.goal}` : ""}</CounterValue>
                 <CounterButton onPress={increment}>
                     <PlusIcon />
                 </CounterButton>

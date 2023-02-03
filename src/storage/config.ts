@@ -1,3 +1,10 @@
 const COUNTER_COLLECTION = "@Conto-Counter";
 
-export { COUNTER_COLLECTION };
+type StoredCounterType = {
+	id: number;
+	title: string;
+	count: number;
+	goal?: number;
+};
+
+export { COUNTER_COLLECTION, StoredCounterType };
